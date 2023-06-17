@@ -5,8 +5,8 @@ public class Model {
 
     public void generateRandomRoll(int size) {
         Random r = new Random();
-        int low = 10;
-        int high = 100;
+        int low = 1;
+        int high = size;
         random_roll = r.nextInt(high-low) + low;
     }
 

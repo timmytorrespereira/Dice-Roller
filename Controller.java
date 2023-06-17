@@ -16,27 +16,15 @@ public class Controller {
    
     }
     public static void main(String[] args) {
-        //frame stuff
-        JFrame frame = new JFrame("Dice Roller");
-        frame.setSize(1000, 600);
-        frame.getContentPane().setBackground(Color.CYAN);
+        
+        Model model = new Model();
+        View view = new View();
+        
+        //initializing view
+        view.setVisible(true);
 
-        //button stuff
-        JButton button = new JButton("Roll !");
-        button.setBounds(50, 50, 400, 100);
-        frame.add(button);
-    
-        //text field
-        JTextField inputbox = new JTextField( 10);
-        frame.add(inputbox);
-
-        frame.setLayout(new FlowLayout());
-
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-    
-
+        // start game
+        Controller game = new Controller(model, view);
     }
     
 }
