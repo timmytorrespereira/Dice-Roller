@@ -7,7 +7,7 @@ public class Model {
         Random r = new Random();
         int low = 1;
         int high = size;
-        random_roll = r.nextInt(high-low) + low;
+        random_roll = r.nextInt((high+1)-low) + low;
     }
 
     public int getRandRoll() {
