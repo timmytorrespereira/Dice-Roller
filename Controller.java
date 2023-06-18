@@ -16,31 +16,44 @@ public class Controller {
         this.view = view;
         this.view.addButtonDetector(new ButtonDetector());
     }
+
     public static void main(String[] args) {
-        
         Model model = new Model();
         View view = new View();
         
         //initializing view
         view.setVisible(true);
 
-        // start game
+        //start game
         Controller game = new Controller(model, view);
     }
-    /* 
-    private class comboDetector implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            view.get_jcombo_choice();
-        }
-    }
-    */
     
     private class ButtonDetector implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            model.generateRandomRoll(view.get_jcombo_choice());
-            String roll = Integer.toString(model.getRandRoll());
-            view.setResultAreaTo(roll);
+                //Generate random role for a dice of length chosen by user
+                model.generateRandomRoll(view.dropdown_choice());
+
+                //Get random roll from model
+                String roll = Integer.toString(model.getRandRoll());
+
+                //Set rolling dice gif going
+                view.setDiceRolling();
+                System.out.println("Flag");
+
+                //Pause for 2 seconds (doesn't work so it's commented out)
+                /*try {
+                    java.util.concurrent.TimeUnit.SECONDS.sleep(2);
+                  } catch (InterruptedException e1) {
+                    Thread.currentThread().interrupt();
+                  }*/
+
+                //Two potential ways to stop dice rolling 
+                //view.stopDiceRolling();
+                //view.gif.setIcon(null);
+
+                //show the int result of the roll
+                view.setResultAreaTo(roll);
         }
     }
 }

@@ -1,45 +1,56 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
 
 public class View extends JFrame {
-    //text_field
-    private JTextField inputbox = new JTextField( 10);
-
-    //button 
+    //Roll Button
     private JButton button = new JButton("Roll !");
 
-    //LABELS
-    private JLabel select_number_text = new JLabel("Select number of sides of your dice: ");
-    private JLabel you_rolled_a = new JLabel("You Rolled a: ");
+    //Labels
+    private JLabel label1 = new JLabel("Select number of sides of your dice: ");
+    private JLabel label2 = new JLabel("You Rolled a: ");
+    
 
-    //JComboBox
+    //JComboBox for user to pick dice side #
     String[] roll_numbers = {"3", "4", "5", "6", "7","8"};
     private JComboBox combo = new JComboBox<>(roll_numbers);
 
-    //ResultArea
-    private JTextArea resultArea = new JTextArea();
+    //ResultArea for when we get roll
+    private JTextArea resultArea = new JTextArea("...");
+
+    //Rolling dice
+    JLabel gif = new JLabel();
+
 
     public View() {
         //frame stuff
         setTitle("Dice Roller");
         setSize(1000, 600);
-        getContentPane().setBackground(Color.MAGENTA);
-        setLayout(new FlowLayout());
+        setLayout(new BorderLayout());
+        getContentPane().setBackground(Color.BLUE);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //button
-        button.setBounds(50, 50, 400, 100);
-
-        //text
-
+        button.setPreferredSize(new Dimension(100, 50));
         //add components to frame
-        add(select_number_text);
-        add(combo);
-        add(button);
-        add(you_rolled_a);
-        add(resultArea);
+        JPanel northpanel = new JPanel(new FlowLayout());
+        northpanel.add(label1);
+        northpanel.add(combo);
+
+        //button.setPreferredSize(new Dimension(100, 50));
+        JPanel centerpanel = new JPanel(new FlowLayout());
+        centerpanel.add(button);
+        centerpanel.add(gif);
+        
+
+        JPanel southpanel = new JPanel(new FlowLayout());
+        southpanel.add(label2);
+        southpanel.add(resultArea);
+        add(centerpanel, BorderLayout.CENTER);
+        add(northpanel, BorderLayout.NORTH);
+        add(southpanel, BorderLayout.SOUTH);
     }
 
     public void addButtonDetector(ActionListener listener) {
@@ -50,12 +61,18 @@ public class View extends JFrame {
         resultArea.setText(roll_number);
     }
 
-    public void jcombo_choice_detector(ActionListener listener) {
-        combo.addActionListener(listener);
-    }
-
-    public int get_jcombo_choice(){
+    public int dropdown_choice(){
         int choice = Integer.parseInt(combo.getSelectedItem().toString());
         return choice;
+    }
+
+    public void setDiceRolling(){
+        URL imageUrl = this.getClass().getResource("dice_gif.gif");
+        ImageIcon imageIcon = new ImageIcon(imageUrl);
+        gif.setIcon(imageIcon);
+    }
+
+    public void stopDiceRolling() {
+        gif.setIcon(null);
     }
 }

@@ -4,6 +4,7 @@ public class Model {
     private int random_roll;
 
     public void generateRandomRoll(int size) {
+        //Generates random number between 1 and the int size provided
         Random r = new Random();
         int low = 1;
         int high = size;
