@@ -41,19 +41,23 @@ public class Controller {
                 view.setDiceRolling();
                 System.out.println("Flag");
 
-                //Pause for 2 seconds (doesn't work so it's commented out)
+                //Two ways to pause for 2 seconds (doesn't work so it's commented out)
                 /* 
                 try {
                     java.util.concurrent.TimeUnit.SECONDS.sleep(2);
                   } catch (InterruptedException e1) {
                     Thread.currentThread().interrupt();
                   }
+                
+                model.pause();
                 */
-
-                //Three potential ways to stop dice rolling ; None work
-                //view.gif.setVisible(false);
-                //view.stopDiceRolling();
-                //view.gif.setIcon(null);
+                
+                //Three potential ways to stop dice rolling
+                /*
+                view.gif.setVisible(false);
+                view.stopDiceRolling();
+                view.gif.setIcon(null);
+                */
 
                 //show the int result of the roll
                 view.setResultAreaTo(roll);

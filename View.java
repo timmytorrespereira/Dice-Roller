@@ -19,7 +19,7 @@ public class View extends JFrame {
     private JComboBox combo = new JComboBox<>(roll_numbers);
 
     //ResultArea for when we get roll
-    private JTextArea resultArea = new JTextArea("...");
+    private JTextArea resultArea = new JTextArea();
 
     //Rolling dice
     JLabel gif = new JLabel();

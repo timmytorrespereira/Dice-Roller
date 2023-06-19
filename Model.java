@@ -24,4 +24,12 @@ public class Model {
         Color randomColor = new Color(red, green, blue);
         return randomColor;
     }
+
+    public void pause() {
+        try {
+            java.util.concurrent.TimeUnit.SECONDS.sleep(2);
+          } catch (InterruptedException e1) {
+            Thread.currentThread().interrupt();
+          }
+    }
 }
