@@ -37,8 +37,6 @@ public class View extends JFrame {
         label2.setFont(new Font("Serif", Font.PLAIN, 30));
         resultArea.setFont(new Font("Serif", Font.BOLD, 60));
         resultArea.setBackground(Color.red);
-        //gif.setPreferredSize(new Dimension(50, 50));
-        //label3.setText("<html>"+"hey guys"+"<html>");
 
         //North Panel with the "Choose sides of dice" plus the drop down choice
         JPanel northpanel = new JPanel(new FlowLayout());
@@ -52,9 +50,8 @@ public class View extends JFrame {
         centerpanel.add(gif);
         centerpanel.setBackground(Color.orange);
         
-        //East panel with message
-        JPanel eastpanel = new JPanel(new FlowLayout());
 
+        //South panel with the "You rolled a *roll*"
         JPanel southpanel = new JPanel(new FlowLayout());
         southpanel.add(label2);
         southpanel.add(resultArea);
@@ -64,9 +61,9 @@ public class View extends JFrame {
         add(centerpanel, BorderLayout.CENTER);
         add(northpanel, BorderLayout.NORTH);
         add(southpanel, BorderLayout.SOUTH);
-        add(eastpanel, BorderLayout.EAST);
-        getContentPane().setBackground(Color.BLUE);
     }
+
+    //Methods below are self explanatory
 
     public void addButtonDetector(ActionListener listener) {
         button.addActionListener(listener);
