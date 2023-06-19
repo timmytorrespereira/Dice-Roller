@@ -28,7 +28,7 @@ public class Controller {
         Controller game = new Controller(model, view);
     }
     
-    private class ButtonDetector implements ActionListener {
+    class ButtonDetector implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
                 //Generate random role for a dice of length chosen by user
@@ -42,13 +42,16 @@ public class Controller {
                 System.out.println("Flag");
 
                 //Pause for 2 seconds (doesn't work so it's commented out)
-                /*try {
+                /* 
+                try {
                     java.util.concurrent.TimeUnit.SECONDS.sleep(2);
                   } catch (InterruptedException e1) {
                     Thread.currentThread().interrupt();
-                  }*/
+                  }
+                */
 
-                //Two potential ways to stop dice rolling 
+                //Three potential ways to stop dice rolling ; None work
+                //view.gif.setVisible(false);
                 //view.stopDiceRolling();
                 //view.gif.setIcon(null);
 
