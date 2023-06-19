@@ -57,6 +57,9 @@ public class Controller {
 
                 //show the int result of the roll
                 view.setResultAreaTo(roll);
+
+                //Change background to next random color
+                view.centerpanel.setBackground(model.randomizeBackgroundColor());
         }
     }
 }

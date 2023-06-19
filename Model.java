@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.awt.Color;
 
 public class Model {
     private int random_roll;
@@ -13,5 +14,14 @@ public class Model {
 
     public int getRandRoll() {
         return random_roll;
+    }
+
+    public Color randomizeBackgroundColor() {
+        Random random = new Random();
+        int red = random.nextInt(256);
+        int green = random.nextInt(256);
+        int blue = random.nextInt(256);
+        Color randomColor = new Color(red, green, blue);
+        return randomColor;
     }
 }

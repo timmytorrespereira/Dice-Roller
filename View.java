@@ -5,6 +5,8 @@ import java.net.URL;
 
 
 public class View extends JFrame {
+    JPanel centerpanel;
+
     //Roll Button
     JButton button = new JButton("Roll !");
 
@@ -22,6 +24,8 @@ public class View extends JFrame {
     //Rolling dice
     JLabel gif = new JLabel();
 
+    //BG colors
+
 
     public View() {
         //frame stuff
@@ -36,7 +40,7 @@ public class View extends JFrame {
         label2.setPreferredSize(new Dimension(200, 100));
         label2.setFont(new Font("Serif", Font.PLAIN, 30));
         resultArea.setFont(new Font("Serif", Font.BOLD, 60));
-        resultArea.setBackground(Color.red);
+        resultArea.setBackground(Color.orange);
 
         //North Panel with the "Choose sides of dice" plus the drop down choice
         JPanel northpanel = new JPanel(new FlowLayout());
@@ -45,17 +49,16 @@ public class View extends JFrame {
         northpanel.setBackground(Color.orange);
 
         //Center panel with rolling dice and button to Roll
-        JPanel centerpanel = new JPanel(new FlowLayout());
+        centerpanel = new JPanel(new FlowLayout());
         centerpanel.add(button);
         centerpanel.add(gif);
         centerpanel.setBackground(Color.orange);
         
-
         //South panel with the "You rolled a *roll*"
         JPanel southpanel = new JPanel(new FlowLayout());
         southpanel.add(label2);
         southpanel.add(resultArea);
-        southpanel.setBackground(Color.red);
+        southpanel.setBackground(Color.orange);
 
         //Add panels to frame
         add(centerpanel, BorderLayout.CENTER);

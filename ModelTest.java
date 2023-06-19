@@ -6,13 +6,10 @@ import org.junit.jupiter.api.BeforeEach;
 
 public class ModelTest {
     private Model model;
-    private View view;
 
     @BeforeEach
     public void setup(){
         model = new Model();
-        view = new View();
-
     }
 
     @Test
