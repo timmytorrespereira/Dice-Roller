@@ -30,7 +30,7 @@ public class View extends JFrame {
     public View() {
         //frame stuff
         setTitle("Dice Roller");
-        setSize(1000, 600);
+        setSize(1000, 700);
         setLayout(new BorderLayout());
         getContentPane().setBackground(Color.BLUE);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -46,11 +46,11 @@ public class View extends JFrame {
         JPanel northpanel = new JPanel(new FlowLayout());
         northpanel.add(label1);
         northpanel.add(combo);
+        northpanel.add(button);
         northpanel.setBackground(Color.orange);
 
         //Center panel with rolling dice and button to Roll
         centerpanel = new JPanel(new FlowLayout());
-        centerpanel.add(button);
         centerpanel.add(gif);
         centerpanel.setBackground(Color.orange);
         
